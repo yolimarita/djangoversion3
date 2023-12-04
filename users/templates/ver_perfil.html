@@ -1,0 +1,17 @@
+
+<!-- ver_perfil.html -->
+<h1>{{ perfil.nombre_completo }}</h1>
+<img src="{{ perfil.foto_perfil.url }}" alt="Foto de Perfil">
+<p>Habilidades: {{ perfil.habilidades }}</p>
+<p>numero_celular: {{ perfil.numero_celular }}</p>
+<p>email: {{ perfil.email }}</p>
+<p>zona_trabajo: {{ perfil.zona_trabajo }}</p>
+
+<!-- Agrega más detalles del perfil según sea necesario -->
+
+<!-- <a href="?concretar_servicio=1">Concretar Servicio</a> -->
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Concretar Servicio</button>
+</form>

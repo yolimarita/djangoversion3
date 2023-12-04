@@ -1,0 +1,12 @@
+<!-- ver_perfil_empleada.html -->
+{% extends 'base-servicios.html' %}
+
+{% block content %}
+  <h1>{{ perfil.user.username }}</h1>
+  <img src="{{ perfil.profile_picture.url }}" alt="{{ perfil.user.username }}">
+  <p>{{ perfil.bio }}</p>
+  <p>Zona: {{ perfil.zona }}</p>
+  <p>Celular: {{ perfil.celular }}</p>
+  <!-- Agrega aquí más detalles del perfil si es necesario -->
+  <!-- Agrega aquí un formulario para concretar la cita con este perfil -->
+{% endblock %}

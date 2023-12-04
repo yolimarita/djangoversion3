@@ -1,0 +1,66 @@
+{% block content %}
+<style>
+    body {
+        background-color: #747475;
+    }
+    h1 {
+        font-size: 36px;
+        text-align: center;
+        color: white;
+    }
+    .slogan {
+        font-size: 24px;
+        text-align: center;
+        color: white;
+        margin-bottom: 20px;
+    }
+    .form-title {
+        font-size: 24px;
+        text-align: center;
+        color: white;
+        margin-bottom: 10px;
+    }
+    .form-container {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40vh; /* Ajusta la altura según tus necesidades */
+        margin-top: 20px;
+    }
+    .form-container form {
+        width: 400px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+    }
+    .form-container form input[type="text"],
+    .form-container form input[type="email"],
+    .form-container form input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    .form-container form button {
+        width: 100%;
+        padding: 10px;
+        background-color: #464487;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+<p class="slogan">¡Tu solución para una limpieza impecable, personal calificado y de confianza!</p>
+<div class="form-container">
+    <form action="/signin/" method="POST">
+        {% csrf_token %}
+        <h2 class="form-title">Iniciar sesión</h2>
+        <input type="text" name="username" placeholder="Nombre de usuario">
+        <input type="password" name="password" placeholder="Contraseña">
+        <button type="submit">Ingresar</button>
+    </form>
+</div>
+{% endblock %}

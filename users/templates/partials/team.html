@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .perfil-container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center; /* Centra el texto en el contenedor */
+        }
+
+        .perfil-imagen {
+            max-width: 250px;
+            max-height: 250px;
+            display: block; /* Asegura que la imagen no afecte el centrado del texto */
+            margin: 0 auto; /* Centra la imagen horizontalmente en el contenedor */
+        }
+
+        .perfil-nombre {
+            font-weight: bold; /* Texto en negrita */
+            margin-top: 10px; /* Espacio entre el nombre y la imagen */
+        }
+
+        .habilidades-container {
+            max-width: 250px; /* Misma anchura que la imagen */
+            margin: 0 auto; /* Centra el contenedor de habilidades */
+        }
+
+        .perfil-habilidades {
+            max-width: 100%; /* Hace que las habilidades no excedan el ancho del contenedor */
+            overflow: hidden; /* Oculta cualquier exceso de texto */
+            text-overflow: ellipsis; /* Muestra puntos suspensivos (...) si el texto es demasiado largo */
+            white-space: nowrap; /* Evita que las habilidades se envuelvan a la siguiente línea */
+            margin-top: 10px; /* Espacio entre el contenedor de habilidades y las habilidades */
+            display: block; /* Hace que el texto se muestre como un bloque para forzar un salto de línea */
+        }
+    </style>
+</head>
+<body>
+
+<section id="perfiles_empleadas">
+    <section id="perfiles_empleadas"> 
+    <p class="slogan" style="font-size: 40px;">¡Tu solución para una limpieza impecable, personal calificado y de confianza!</p> 
+    {% for perfil in perfiles %}
+        <div class="perfil-container">
+            <p class="perfil-nombre">{{ perfil.nombre_completo }}</p>
+            <img src="{{ perfil.foto_perfil.url }}" alt="Foto de Perfil" class="perfil-imagen">
+            <div class="habilidades-container">
+                <p class="perfil-habilidades">{{ perfil.habilidades }}</p>
+            </div>
+            <a href="{% url 'perfiles_empleadas' %}"></a>
+            <a href="{% url 'ver_perfil' perfil_id=perfil.id %}">Ver Perfil</a>
+
+        </div>
+    {% endfor %}
+</section>
+
+</body>
+</html>

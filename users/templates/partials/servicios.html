@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .button-group {
+  display: flex;
+  justify-content: space-between;
+}
+.button-group a:hover {
+            background-color: #0d47a1; /* Azul oscuro brillante */
+            color: white;
+        }
+.description-box {
+  flex: 1;
+  margin: 0 10px;
+}
+    </style>
+</head>
+<section id="servicios">
+    <div class="servicios-container"> 
+        <div class="button-group">
+          <div class="description-box">
+              <h2>Conviértete en una Empleada Certificada</h2>
+              <p>¡Únete a nuestra comunidad de empleadas certificadas y aprovecha los beneficios de trabajar con nosotros! Obtén flexibilidad laboral, elige tus horarios y disfruta de un trabajo gratificante. Haz clic en el botón para empezar a crear tu perfil.</p>
+              <a href="{% url 'registro_perfil' %}" class="btn-start">Crear Perfil</a>
+          </div>
+          <div class="description-box">
+              <h2>Solicita un Servicio de Limpieza Profesional</h2>
+              <p>¡Déjanos encargarnos de la limpieza de tu hogar o empresa de manera profesional y eficiente! Nuestro equipo de expertos en limpieza se encargará de dejar tus espacios impecables. Haz clic en el botón para agendar un servicio de limpieza ahora mismo.</p>
+              <a href="{% url 'solicitar_servicio' %}" class="btn-start">Solicitar Servicio</a>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>solicitar_servicios</title>
+    <style>
+        body {
+            background-color: #747475;
+            font-family: Arial, sans-serif;
+            color: rgb(14, 14, 14);
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .form-container {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .form-container button {
+            display: block;
+            margin: 0 auto;
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0b3e87;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"],
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            color: black;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<section id="solicitar_servicios">
+    <h1>De la mano de expertos tu vida será más fácil</h1>
+    <!-- En tu template de solicitar_servicio.html -->
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Solicitar Servicio</button>
+  </form>
+  
+</section>
+</html>
+
+
